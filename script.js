@@ -22,6 +22,8 @@ var upperCaseLetters = ("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "
 
 var specialCharacter = ("!", "@", "#", "$", "%", "^", "&", "*", "<", ">","/", "~", "=", "+", "-")
 
+var numericalCharacter = ("0", "1", "2", "3", "4", "5", "6", "7", "8", "9")
+
 function writePassword() {
   var password = generatePassword ();
   var passwordText = document.querySelector("#generate");
@@ -33,20 +35,20 @@ function generatePassword () {
   //Prompt user for upper alpha
   //Prompt user for number
   //Prompt user for password length
-
-  return "Password should go here"
+  //Do I need prompts or should I just assign the value?
+  //return "Password should go here"
 }
 
-//Declare function for each array
+//Declare function for each array -should this be within the generatePassword function?
 function getRandomcharacter(array) {
 
 }
 //Run loop to select charracters from all four arrays
-
+//This may be the loop- does this need to go inside the generatePassword function?
 for(let i = 0; i < i , length; i++) {
 
 }
 
-//splice to the character length of the password 
+//splice to the character length of the password to be 10 characters-search refresher for how to splice
 
-//Display password on the screen
+//Display password on the screen- is this what the return will do?
