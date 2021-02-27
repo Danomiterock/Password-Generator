@@ -25,7 +25,7 @@ var specialCharacter = ("!", "@", "#", "$", "%", "^", "&", "*", "<", ">","/", "~
 var numericalCharacter = ("0", "1", "2", "3", "4", "5", "6", "7", "8", "9")
 
 //Defines an item as a vlue selected from a specific array
-var item = item[Math.floor(Math.random()*item.length)]
+// var item = item[Math.floor(Math.random()*item.length)]
 
 function writePassword() {
   var password = generatePassword ();
@@ -33,17 +33,20 @@ function writePassword() {
 }
 
 function generatePassword () {
+  //Prompt user for password length
+  prompt("How many characters would you like your password to be? (must be between 8 and 128 characters)")
  
   //Prompt user for upper alpha
-  prompt("Would you like to include Uppercase Letters?", upperCaseLetters)
+  confirm("Would you like to include Uppercase Letters?", upperCaseLetters)
+
   //Prompt user for lower alphs
-  prompt("Would you like to include Lowercase Letters?", lowerCaseLetters)
+  confirm("Would you like to include Lowercase Letters?", lowerCaseLetters)
   //Prompt user for number 
-  prompt("Would you like to include Numbers?", numericalCharacter)
+  confirm("Would you like to include Numbers?", numericalCharacter)
   //Prompt User for special characters
-  prompt("Would you like to include Special Characters?", specialCharacter)
-  //Prompt user for password length
-  prompt("How many characters would you like your password to be?", ?????????)
+  confirm("Would you like to include Special Characters?", specialCharacter)
+  
+
 
   //return "Password should go here"
 }
@@ -58,10 +61,10 @@ for(let i = 0; i < i , length; i++) {
 
 }
 
-//splice to the character length of the password to be between 8 and 120 characters-search refresher for how to splice
-array.splice(index, howmany, item1, ....., itemX)
-//This code limits the max length of the password
-<input type="text" maxlength="2" id="sessionNo" name="sessionNum" onkeypress="return isNumberKey(event)" />
+// //splice to the character length of the password to be between 8 and 120 characters-search refresher for how to splice
+// array.splice(index, howmany, item1, ....., itemX)
+// //This code limits the max length of the password
+// <input type="text" maxlength="2" id="sessionNo" name="sessionNum" onkeypress="return isNumberKey(event)" />
 
 //Display password on the screen- is this what the return will do?
 
@@ -138,3 +141,5 @@ array.splice(index, howmany, item1, ....., itemX)
 // * Repository contains multiple descriptive commit messages.
 
 // * Repository contains quality readme file with description, screenshot, and link to deployed application.
+
+generatePassword()
