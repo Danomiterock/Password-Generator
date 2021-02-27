@@ -6,8 +6,8 @@ console.log(generateBtn);
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
+//This draws the password content from the information retrieved by th efunctions
+  passwordText.textContent = password;
 
 }
 
@@ -16,49 +16,80 @@ generateBtn.addEventListener("click", writePassword);
 
 // Create a array for upper case alpha, lower case alpha, special character, and number
 
-var lowerCaseLetters = ("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z")
+var lowerCaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
-var upperCaseLetters = ("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X","Y", "Z")
+var upperCaseLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X","Y", "Z"]
 
-var specialCharacter = ("!", "@", "#", "$", "%", "^", "&", "*", "<", ">","/", "~", "=", "+", "-")
+var specialCharacter = ["!", "@", "#", "$", "%", "^", "&", "*", "<", ">","/", "~", "=", "+", "-"]
 
-var numericalCharacter = ("0", "1", "2", "3", "4", "5", "6", "7", "8", "9")
+var numericalCharacter = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 //Defines an item as a vlue selected from a specific array
-// var item = item[Math.floor(Math.random()*item.length)]
+function random(arr) {
+  let randomindex = Math.floor(Math.random()*arr.length)
+  return arr[randomindex]
+} 
 
-function writePassword() {
-  var password = generatePassword ();
-  var passwordText = document.querySelector("#generate");
-}
+// function writePassword() {
+//   var password = generatePassword ();
+//   var passwordText = document.querySelector("#generate");
+// }
 
-function generatePassword () {
+function passwordOptions() {
   //Prompt user for password length
-  prompt("How many characters would you like your password to be? (must be between 8 and 128 characters)")
+  let passwordLength = parseInt (prompt ("How many characters would you like your password to be? (must be between 8 and 128 characters)"))
  
   //Prompt user for upper alpha
-  confirm("Would you like to include Uppercase Letters?", upperCaseLetters)
+ let uppers = confirm("Would you like to include Uppercase Letters?")
 
   //Prompt user for lower alphs
-  confirm("Would you like to include Lowercase Letters?", lowerCaseLetters)
+ let lowers = confirm("Would you like to include Lowercase Letters?")
   //Prompt user for number 
-  confirm("Would you like to include Numbers?", numericalCharacter)
+ let numbers = confirm("Would you like to include Numbers?")
   //Prompt User for special characters
-  confirm("Would you like to include Special Characters?", specialCharacter)
-  
-
-
-  //return "Password should go here"
+  let specchar = confirm("Would you like to include Special Characters?")
+  let options = {
+    passwordLength, uppers, lowers, numbers, specchar
+  }
+  return options
 }
 
-//Declare function for each array -should this be within the generatePassword function?
-function getRandomcharacter(array) {
+function generatePassword() {
+  let options = passwordOptions();
+  let concats = []
+  let guaranted = []
+  let finalpassword = []
+if (options.specchar) {
+  concats =[...concats, ...specialCharacter]
+  guaranted.push(random(specialCharacter))
+  }
 
+if (options.numbers) {
+  concats = concats.concat(numericalCharacter)
+  guaranted.push(random(numericalCharacter))
 }
+
+if (options.lowers) {
+  concats = concats.concat(lowerCaseLetters)
+  guaranted.push(random(lowerCaseLetters))
+}
+
+if (options.uppers) {
+  concats = concats.concat(upperCaseLetters)
+  guaranted.push(random(upperCaseLetters))
+}
+console.log(concats)
+console.log(guaranted)
+
 //Run loop to select charracters from all four arrays
 //This may be the loop- does this need to go inside the generatePassword function?
-for(let i = 0; i < i , length; i++) {
-
+for(let i = 0; i < options.passwordLength; i++) {
+finalpassword.push(random(concats))
+}
+for(let i = 0; i < guaranted.length; i++) {
+  finalpassword[i] = guaranted[i]
+  }
+return finalpassword.join("")
 }
 
 // //splice to the character length of the password to be between 8 and 120 characters-search refresher for how to splice
@@ -142,4 +173,4 @@ for(let i = 0; i < i , length; i++) {
 
 // * Repository contains quality readme file with description, screenshot, and link to deployed application.
 
-generatePassword()
+// generatePassword()
