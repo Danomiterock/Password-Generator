@@ -58,8 +58,10 @@ for(let i = 0; i < i , length; i++) {
 
 }
 
-//splice to the character length of the password to be 10 characters-search refresher for how to splice
+//splice to the character length of the password to be between 8 and 120 characters-search refresher for how to splice
 array.splice(index, howmany, item1, ....., itemX)
+//This code limits the max length of the password
+<input type="text" maxlength="2" id="sessionNo" name="sessionNum" onkeypress="return isNumberKey(event)" />
 
 //Display password on the screen- is this what the return will do?
 
