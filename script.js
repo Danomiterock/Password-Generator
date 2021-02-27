@@ -37,6 +37,7 @@ function random(arr) {
 
 function passwordOptions() {
   //Prompt user for password length
+  //ParseInt means change the variable from a string to a number
   let passwordLength = parseInt (prompt ("How many characters would you like your password to be? (must be between 8 and 128 characters)"))
  
   //Prompt user for upper alpha
