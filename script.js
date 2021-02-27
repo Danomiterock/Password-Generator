@@ -33,12 +33,18 @@ function writePassword() {
 }
 
 function generatePassword () {
-  //Prompt User for special characters
-  //Prompt user for lower alphs
+ 
   //Prompt user for upper alpha
-  //Prompt user for number
+  prompt("Would you like to include Uppercase Letters?", upperCaseLetters)
+  //Prompt user for lower alphs
+  prompt("Would you like to include Lowercase Letters?", lowerCaseLetters)
+  //Prompt user for number 
+  prompt("Would you like to include Numbers?", numericalCharacter)
+  //Prompt User for special characters
+  prompt("Would you like to include Special Characters?", specialCharacter)
   //Prompt user for password length
-  //Do I need prompts or should I just assign the value?
+  prompt("How many characters would you like your password to be?", ?????????)
+
   //return "Password should go here"
 }
 
@@ -53,6 +59,7 @@ for(let i = 0; i < i , length; i++) {
 }
 
 //splice to the character length of the password to be 10 characters-search refresher for how to splice
+array.splice(index, howmany, item1, ....., itemX)
 
 //Display password on the screen- is this what the return will do?
 
