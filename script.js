@@ -1,6 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-console.log(generateBtn);
+// console.log(generateBtn);
 
 // Write password to the #password input
 function writePassword() {
@@ -38,7 +38,12 @@ function random(arr) {
 function passwordOptions() {
   //Prompt user for password length
   //ParseInt means change the variable from a string to a number
-  let passwordLength = parseInt(prompt ("How many characters would you like your password to be? (must be between 8 and 128 characters)")while,(passwordLength < 8 || passwordLength > 128))
+  let passwordLength = parseInt(prompt ("How many characters would you like your password to be? (must be between 8 and 128 characters)"));
+  if (passwordLength < 8 || passwordLength > 128) {
+    alert ("Passwprd length must be between 8 and 128.")
+    return passwordOptions()
+  }
+    
  
   //Prompt user for upper alpha
  let uppers = confirm("Would you like to include Uppercase Letters?")
