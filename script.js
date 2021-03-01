@@ -38,16 +38,7 @@ function random(arr) {
 function passwordOptions() {
   //Prompt user for password length
   //ParseInt means change the variable from a string to a number
-  let passwordLength = parseInt (prompt ("How many characters would you like your password to be? (must be between 8 and 128 characters)"))
-  // if (passwordLength < 8 || passwordLength > 128 === true){
-  //     passwordLength === false; 
-  //        alert("Invalid number chosen. Must Choose Between 8-128 Characters.");
-  //        return;
-  //       } 
-  // else if (NaN) {
-  //   alert("Please enter valid numbers");
-  //   return;
-  // }
+  let passwordLength = parseInt(prompt ("How many characters would you like your password to be? (must be between 8 and 128 characters)")while,(passwordLength < 8 || passwordLength > 128))
  
   //Prompt user for upper alpha
  let uppers = confirm("Would you like to include Uppercase Letters?")
@@ -63,8 +54,7 @@ function passwordOptions() {
   }
   return options
 }
-
-//these lines define the various outputs and rules so that we can tell the computer what to do with them.
+//These items define the names of various functions and objects in the code.
 
 function generatePassword() {
   let options = passwordOptions();
